@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "webdev-components-system",
+  "homepage": "https://github.com/cfo-misd-web/webdev-components-system",
+  "items": [
+    {
+      "name": "hello-world",
+      "type": "registry:component",
+      "title": "Hello World",
+      "description": "A starter component that verifies the registry is wired up correctly.",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/ui/hello-world.tsx",
+          "type": "registry:component",
+          "target": "~/components/ui/hello-world.tsx"
+        }
+      ]
+    }
+  ]
+}
