@@ -31,6 +31,19 @@
       ]
     },
     {
+      "name": "dom",
+      "type": "registry:lib",
+      "title": "DOM Utilities",
+      "description": "Shared pure functions for working with DOM events.",
+      "files": [
+        {
+          "path": "registry/lib/dom.ts",
+          "type": "registry:lib",
+          "target": "~/lib/dom.ts"
+        }
+      ]
+    },
+    {
       "name": "hello-world",
       "type": "registry:component",
       "title": "Hello World",
@@ -49,7 +62,7 @@
       "type": "registry:component",
       "title": "Password Input",
       "description": "A password input with show/hide toggle, built-in tooltip, and optional live validation ruleset checklist. Built on Kumo UI components.",
-      "registryDependencies": ["cn"],
+      "registryDependencies": ["cn", "dom"],
       "dependencies": ["@cloudflare/kumo", "@phosphor-icons/react", "zod"],
       "files": [
         {
@@ -69,7 +82,7 @@
       "type": "registry:component",
       "title": "Search Bar",
       "description": "Search input that manages a URL search parameter. Router-agnostic via an adapter prop. Supports debouncing, clearable input, and server-side search callbacks.",
-      "registryDependencies": ["cn", "types"],
+      "registryDependencies": ["cn", "types", "dom"],
       "dependencies": ["@cloudflare/kumo", "@phosphor-icons/react", "zod"],
       "files": [
         {

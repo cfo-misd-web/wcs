@@ -4,6 +4,7 @@ import * as React from "react";
 import { InputGroup } from "@cloudflare/kumo";
 import { MagnifyingGlassIcon, XIcon } from "@phosphor-icons/react";
 import { createDebounce } from "@/lib/search-bar/validation";
+import { extractInputValue } from "@/lib/dom";
 import { cn } from "@/lib/cn";
 import type { ScrollBehavior } from "@/lib/types";
 
@@ -444,7 +445,7 @@ export function SearchBar({
   }, [currentValue]);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const value = e.target.value;
+    const value = extractInputValue(e);
     setInputValue(value);
     debouncedUpdate(value);
   }

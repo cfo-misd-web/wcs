@@ -6,6 +6,7 @@ import { CheckIcon, XIcon, EyeSlashIcon, EyeIcon } from "@phosphor-icons/react";
 import { validatePassword, buildRules } from "@/lib/password-input/validation";
 import type { PasswordRuleset } from "@/lib/password-input/validation";
 import { cn } from "@/lib/cn";
+import { extractInputValue } from "@/lib/dom";
 
 // =============================================================================
 // TYPES
@@ -394,7 +395,7 @@ export function PasswordInput({
         <InputGroup.Input
           type={visible ? "text" : "password"}
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => onChange(extractInputValue(e))}
           placeholder={placeholder}
           aria-label={resolveAriaLabel(label)}
         />

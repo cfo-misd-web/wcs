@@ -41,6 +41,10 @@ export type SearchBarConfig = z.infer<typeof SearchBarConfigSchema>;
 // Pure functions for reading and writing URL search params.
 // The component never touches the URL directly — it calls these instead.
 // Each function returns a new value without mutating the input.
+//
+// Note: These functions are provided as utilities for consumers building
+// their own router adapters — see the Next.js adapter example in the
+// SearchBar component docs for usage.
 // =============================================================================
 
 /**
