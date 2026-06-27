@@ -116,6 +116,6 @@ function TestPage() {
   )
 }
 
-export const Route = createFileRoute('/test')({
+export const Route = createFileRoute('/test-password')({
   component: TestPage,
 })

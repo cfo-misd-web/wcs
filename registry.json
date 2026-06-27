@@ -50,6 +50,26 @@
           "target": "~/lib/password-input/validation.ts"
         }
       ]
+    },
+    {
+      "name": "search-bar",
+      "type": "registry:component",
+      "title": "Search Bar",
+      "description": "Search input that manages a URL search parameter. Router-agnostic via an adapter prop. Supports debouncing, clearable input, and server-side search callbacks.",
+      "registryDependencies": ["cn"],
+      "dependencies": ["@cloudflare/kumo", "@phosphor-icons/react", "zod"],
+      "files": [
+        {
+          "path": "registry/ui/search-bar.tsx",
+          "type": "registry:component",
+          "target": "~/components/ui/search-bar.tsx"
+        },
+        {
+          "path": "registry/lib/search-bar/validation.ts",
+          "type": "registry:lib",
+          "target": "~/lib/search-bar/validation.ts"
+        }
+      ]
     }
   ]
 }
