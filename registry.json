@@ -4,6 +4,20 @@
   "homepage": "https://github.com/cfo-misd-web/webdev-components-system",
   "items": [
     {
+      "name": "cn",
+      "type": "registry:lib",
+      "title": "CN Utility",
+      "description": "Merges Tailwind CSS class names safely using clsx and tailwind-merge.",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [
+        {
+          "path": "registry/lib/cn.ts",
+          "type": "registry:lib",
+          "target": "~/lib/cn.ts"
+        }
+      ]
+    },
+    {
       "name": "hello-world",
       "type": "registry:component",
       "title": "Hello World",
@@ -14,6 +28,26 @@
           "path": "registry/ui/hello-world.tsx",
           "type": "registry:component",
           "target": "~/components/ui/hello-world.tsx"
+        }
+      ]
+    },
+    {
+      "name": "password-input",
+      "type": "registry:component",
+      "title": "Password Input",
+      "description": "A password input with show/hide toggle, built-in tooltip, and optional live validation ruleset checklist. Built on Kumo UI components.",
+      "registryDependencies": ["cn"],
+      "dependencies": ["@cloudflare/kumo", "@phosphor-icons/react", "zod"],
+      "files": [
+        {
+          "path": "registry/ui/password-input.tsx",
+          "type": "registry:component",
+          "target": "~/components/ui/password-input.tsx"
+        },
+        {
+          "path": "registry/lib/password-input/validation.ts",
+          "type": "registry:lib",
+          "target": "~/lib/password-input/validation.ts"
         }
       ]
     }
