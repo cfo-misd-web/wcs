@@ -9,7 +9,7 @@ import {
   normalizeToArray,
   denormalizeValue,
 } from "@/lib/accordion/validation";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils/cn";
 
 // =============================================================================
 // TYPES

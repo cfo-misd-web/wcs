@@ -47,7 +47,7 @@ npx shadcn@latest add cfo-misd-web/webdev-components-system/hello-world --dry-ru
 
 ## Adding a new item
 
-1. Add the source file(s) under `registry/` (components in `registry/ui/`, hooks in `registry/hooks/`, utilities in `registry/lib/`, etc.).
+1. Add the source file(s) under `registry/` (components in `registry/ui/`, hooks in `registry/hooks/`, per-component logic in `registry/lib/<name>/`, shared utilities in `registry/lib/utils/`, etc.).
 2. Declare the item in [`registry.json`](registry.json):
 
    ```json
@@ -62,14 +62,15 @@ npx shadcn@latest add cfo-misd-web/webdev-components-system/hello-world --dry-ru
        {
          "path": "registry/ui/my-component.tsx",
          "type": "registry:component",
-         "target": "~/components/ui/my-component.tsx"
+         "target": "@ui/my-component.tsx"
        }
      ]
    }
    ```
 
    - `path` — where the file lives in this repo.
-   - `target` — where it lands in the consumer's project (`~` = project root).
+   - `target` — where it lands in the consumer's project. **Use the alias placeholders `@ui/`, `@lib/`, `@components/`, `@hooks/`** so files follow each consumer's `components.json` aliases (anything after the placeholder, including subfolders, is preserved). Do **not** use `~/` — that resolves to the project root and dumps files there, ignoring the consumer's configured directories.
+   - In source files, import shared items via the canonical paths the CLI rewrites: `@/lib/...` (→ `lib` alias), `@/components/ui/...` (→ `ui` alias), `@/lib/utils` (→ `utils` alias), `@/hooks/...` (→ `hooks` alias). Avoid non-standard prefixes like `@/utils/...` — the CLI has no mapping for them and they break on install.
    - `registryDependencies` — other registry items it needs (shadcn built-ins like `button`, or items from this registry as `cfo-misd-web/webdev-components-system/<name>`).
    - `dependencies` — npm packages to install alongside it.
 

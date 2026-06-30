@@ -5,8 +5,8 @@ import { InputGroup } from "@cloudflare/kumo";
 import { CheckIcon, XIcon, EyeSlashIcon, EyeIcon } from "@phosphor-icons/react";
 import { validatePassword, buildRules } from "@/lib/password-input/validation";
 import type { PasswordRuleset } from "@/lib/password-input/validation";
-import { cn } from "@/utils/cn";
-import { extractInputValue } from "@/utils/dom";
+import { cn } from "@/lib/utils/cn";
+import { extractInputValue } from "@/lib/utils/dom";
 
 // =============================================================================
 // TYPES

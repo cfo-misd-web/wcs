@@ -1,7 +1,7 @@
 {
-  "name": "webdev-components-system",
+  "name": "wcs",
   "version": "1.0.0",
-  "description": "",
+  "description": "cfo-misd-web/webdev-components-system",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
