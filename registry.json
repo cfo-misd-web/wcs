@@ -136,6 +136,26 @@
           "target": "~/lib/accordion/validation.ts"
         }
       ]
+    },
+    {
+      "name": "container",
+      "type": "registry:component",
+      "title": "Container",
+      "description": "A fluid, mobile-ready container with container-query-based typography scaling and WCAG-compliant zoom support.",
+      "registryDependencies": ["cn"],
+      "dependencies": ["zod"],
+      "files": [
+        {
+          "path": "registry/ui/container.tsx",
+          "type": "registry:component",
+          "target": "~/components/ui/container.tsx"
+        },
+        {
+          "path": "registry/lib/container/validation.ts",
+          "type": "registry:lib",
+          "target": "~/lib/container/validation.ts"
+        }
+      ]
     }
   ]
 }
