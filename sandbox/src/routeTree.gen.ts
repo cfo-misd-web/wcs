@@ -14,6 +14,7 @@ import { Route as TestPasswordRouteImport } from './routes/test-password'
 import { Route as TestPaginationRouteImport } from './routes/test-pagination'
 import { Route as TestContainerRouteImport } from './routes/test-container'
 import { Route as TestAccordionRouteImport } from './routes/test-accordion'
+import { Route as TestAccessibilityRouteImport } from './routes/test-accessibility'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiSplatRouteImport } from './routes/api.$'
 import { Route as ApiRpcSplatRouteImport } from './routes/api.rpc.$'
@@ -44,6 +45,11 @@ const TestAccordionRoute = TestAccordionRouteImport.update({
   path: '/test-accordion',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TestAccessibilityRoute = TestAccessibilityRouteImport.update({
+  id: '/test-accessibility',
+  path: '/test-accessibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -67,6 +73,7 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/test-accessibility': typeof TestAccessibilityRoute
   '/test-accordion': typeof TestAccordionRoute
   '/test-container': typeof TestContainerRoute
   '/test-pagination': typeof TestPaginationRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/test-accessibility': typeof TestAccessibilityRoute
   '/test-accordion': typeof TestAccordionRoute
   '/test-container': typeof TestContainerRoute
   '/test-pagination': typeof TestPaginationRoute
@@ -90,6 +98,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/test-accessibility': typeof TestAccessibilityRoute
   '/test-accordion': typeof TestAccordionRoute
   '/test-container': typeof TestContainerRoute
   '/test-pagination': typeof TestPaginationRoute
@@ -103,6 +112,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/test-accessibility'
     | '/test-accordion'
     | '/test-container'
     | '/test-pagination'
@@ -114,6 +124,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/test-accessibility'
     | '/test-accordion'
     | '/test-container'
     | '/test-pagination'
@@ -125,6 +136,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/test-accessibility'
     | '/test-accordion'
     | '/test-container'
     | '/test-pagination'
@@ -137,6 +149,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  TestAccessibilityRoute: typeof TestAccessibilityRoute
   TestAccordionRoute: typeof TestAccordionRoute
   TestContainerRoute: typeof TestContainerRoute
   TestPaginationRoute: typeof TestPaginationRoute
@@ -184,6 +197,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestAccordionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/test-accessibility': {
+      id: '/test-accessibility'
+      path: '/test-accessibility'
+      fullPath: '/test-accessibility'
+      preLoaderRoute: typeof TestAccessibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -217,6 +237,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  TestAccessibilityRoute: TestAccessibilityRoute,
   TestAccordionRoute: TestAccordionRoute,
   TestContainerRoute: TestContainerRoute,
   TestPaginationRoute: TestPaginationRoute,

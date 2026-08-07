@@ -1,0 +1,26 @@
+/* =============================================================================
+   ACCESSIBILITY PANEL — Required CSS
+   Import this file once in your global stylesheet.
+   ============================================================================= */
+
+/* Reduce motion — applied when the user enables "Reduce motion" */
+[data-reduce-motion="true"] * {
+  animation-duration: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* High contrast — applied when the user enables "High contrast"
+   Override these variables to match your app's design tokens.      */
+[data-high-contrast="true"] {
+  --kumo-text-default: #000000;
+  --kumo-text-subtle: #1a1a1a;
+  --kumo-bg-base: #ffffff;
+  --kumo-border-hairline: #000000;
+}
+
+/* Focus indicators — applied when "Enhanced focus indicators" is on */
+[data-focus-visible="true"] :focus-visible {
+  outline: 3px solid #005fcc !important;
+  outline-offset: 3px !important;
+}
